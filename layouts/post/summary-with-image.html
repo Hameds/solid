@@ -1,0 +1,18 @@
+
+{{ if .Params.featured_image }}
+<div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
+   <p><img class="img-responsive" alt="image from {{ .Title }}" src="{{ .Params.featured_image }}"></p>
+</div>
+{{ end }}
+
+<a href="{{ .URL }}"><h3 class="ctitle">{{ .Title }}</h3></a>
+{{ if .Date }}
+<p><csmall>Posted:  {{ .Date.Format "January 2, 2006" }}</csmall> </p>
+
+{{ end }}
+
+{{ .Summary  }}
+<p><a href="{{ .URL }}">[Read More]</a></p>
+<div class="hline"></div>
+
+<div class="spacing"></div>

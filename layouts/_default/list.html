@@ -1,0 +1,21 @@
+{{ define "main" }}
+<div class="container mtb">
+  <div class="row">
+    <div class="col-lg-12">
+        {{ .Content }}
+    </div>
+  </div>
+    <div class="row">
+      <div class="col-lg-8">  
+        {{ $section := where .Data.Pages "Section" .Section }}
+          {{ range  $section }}           
+              {{ partial "summary.html" . }}           
+          {{ end }}       
+        {{ template "_internal/pagination.html" . }}        
+      </div>      
+     <div class="col-lg-4">  
+     </div>  
+    </div>
+  </div>
+</div>
+{{ end }}

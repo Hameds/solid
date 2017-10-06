@@ -1,0 +1,11 @@
+  <a href="{{ .URL }}"><h3 class="ctitle">{{ .Title }}</h3></a>
+  {{ if .Date }}
+  <p><csmall>Posted:  {{ .Date.Format "January 2, 2006" }}</csmall> </p>
+  
+{{ end }}
+  
+{{ .Summary  }}
+  <p><a href="{{ .URL }}">[Read More]</a></p>
+  <div class="hline"></div>
+  
+  <div class="spacing"></div>

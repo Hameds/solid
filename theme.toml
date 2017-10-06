@@ -1,0 +1,17 @@
+name = "Solid"
+license = "MIT"
+licenselink = "https://github.com/hameds/solid/blob/master/LICENSE.md"
+description = "Hugo Solid Theme"
+homepage = "https://github.com/hameds/solid/"
+tags = ["solid", "responsive",  "hero", "company", "agency"]
+features = []
+min_version = "0.27.1"
+
+[author]
+  name = "Hamed"
+  homepage = "https://github.com/hameds/"
+
+[original]
+  name = "BlackTie Solid"
+  homepage = "http://blacktie.co/2014/05/solid-multipurpose-theme/"
+  repo = ""
