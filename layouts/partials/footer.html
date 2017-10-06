@@ -1,0 +1,73 @@
+{{ with .Site.Params.footer }}
+<div id="footerwrap">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                
+                <h4>{{ .notetitle }}</h4>
+                <div class="hline-w"></div>
+                {{ .note | safeHTML }}
+            </div>
+            <div class="col-lg-4">
+                <h4>Social Links</h4>
+                <div class="hline-w"></div>
+                <p>
+                    {{ if isset . "facebook" }}
+                        <a href="{{ .facebook }}"><i class="fa fa-facebook"></i></a>
+                    {{ end }}
+                    {{ if isset . "twitter" }}
+                        <a href="{{ .twitter }}"><i class="fa fa-twitter"></i></a>
+                    {{ end }}
+                    {{ if isset . "instagram" }}
+                        <a href="{{ .instagram }}"><i class="fa fa-instagram"></i></a>
+                    {{ end }}
+                    {{ if isset . "github" }}
+                        <a href="{{ .github }}"><i class="fa fa-github"></i></a>
+                    {{ end }}
+                    {{ if isset . "linkedin" }}
+                        <a href="{{ .linkedin }}"><i class="fa fa-linkedin"></i></a>
+                    {{ end }}                  
+                </p>
+            </div>
+            <div class="col-lg-4">
+                <h4>{{ .addresstitle }}</h4>
+                <div class="hline-w"></div>
+                {{ .address | safeHTML }}
+            </div>
+        
+        </div>
+    </div>
+</div>
+{{else }}
+<div id="footerwrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    
+                    <h4>About</h4>
+                    <div class="hline-w"></div>
+                    <p>
+                            You can replace this with your text, change social media links and address information
+                        </p>
+                </div>
+                <div class="col-lg-4">
+                    <h4>Social Links</h4>
+                    <div class="hline-w"></div>
+                    <p>
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                        <a href="#"><i class="fa fa-github"></i></a>
+                        <a href="#"><i class="fa fa-linkedin"></i></a>              
+                    </p>
+                </div>
+                <div class="col-lg-4">
+                    <h4>Our Bunker</h4>
+                    <div class="hline-w"></div>
+                    <p>Some Ave, 987,<br>23890, New York,<br>United States.<br></p>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+{{ end }}

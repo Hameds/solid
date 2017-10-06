@@ -1,0 +1,63 @@
+{{ define "main" }}
+{{ partial "hero.html" .}}
+{{ partial "services.html" .}}
+ <div class="container mtb">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-1">
+        {{ with .Site.Params.about }}   
+          <h4>{{ .title }}</h4>
+          {{ .description | safeHTML }}
+          <p><br/><a href="{{ .linkurl }}" class="btn btn-theme">{{ .linktitle }}</a></p>
+       
+        {{ else }}
+          <h4>You can configure this!</span>
+            <p>
+                Hi there!<br> 
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                <br>
+                Don't want this Lorem Ipsum? This is hugo port of <a href="http://blacktie.co/2014/05/solid-multipurpose-theme/" target="_blank">Solid Theme</a> and good news is you can configure it
+            </p>
+            <p><br/><a href="https://github.com/hameds/solid/blob/master/README.md" class="btn btn-theme">Learn more about configuration</a></p>
+        {{ end }}
+        
+      </div>
+      <div class="col-lg-3">         
+          {{ $mainSections := .Site.Params.mainSections | default (slice "post") }}         
+          {{ $section := where .Site.RegularPages "Section" "in" $mainSections }}         
+          {{ $section_count := len $section }}
+          {{ if ge $section_count 1 }}          
+            {{ $section_name := index (.Site.Params.mainSections) 0 }}
+            {{ with .Site.GetPage "section" $section_name }}            
+            <h4>    Recent {{ .Title }}</h4>
+          {{ end }}            
+            <div class="hline"></div>
+            {{/* Range through the first three items of the section */}}
+            {{ range (first 4 $section) }}             
+              <p><a href="{{ .URL }}">{{ .Title }}</a></p>
+            {{ end }}        
+            {{ with .Site.GetPage "section" $section_name }}
+            <p><a href="{{ .URL }}">All {{.Title }}</a></p>
+          {{ end }}      
+            
+        
+              </div>
+          {{ end }}
+       
+      
+        
+       
+      
+      </div>
+      
+    </div>
+  </div>
+  <div class="container mtb">
+      <div class="row">
+        <div class="col-lg-12">
+            {{ .Content }}
+        </div>
+        </div>
+        </div>
+
+       
+{{ end }}

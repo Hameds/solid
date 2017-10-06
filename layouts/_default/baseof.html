@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="{{ $.Site.LanguageCode | default "en" }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ block "title" . }}{{ .Site.Title }} {{ with .Title }} | {{ . }}{{ end }}{{ end }}</title>
+    {{ .Hugo.Generator }}
+    <!-- Bootstrap core CSS -->
+    <link href='{{ "css/bootstrap.css" | absURL }}' rel='stylesheet' type="text/css" />
+    <!-- Custom styles for this template -->
+    <link href='{{ "css/style.css" | absURL }}' rel='stylesheet' type="text/css" />
+    <link href='{{ "css/font-awesome.min.css" | absURL }}' rel='stylesheet' type="text/css" />
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->    
+  </head>
+  <body>
+    {{ block "header" . }}{{ partial "header.html" .}}{{ end }}
+    {{ block "main" . }}{{ end }}
+	  {{ block "footer" . }}{{ partial "footer.html" . }}{{ end }}	 
+    {{ block "scripts" . }}{{ partial "scripts.html" . }}{{ end }}
+  </body>
+</html>

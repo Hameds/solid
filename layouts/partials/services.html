@@ -1,0 +1,43 @@
+{{ with .Site.Params.services }}
+<div id="service">
+  <div class="container">
+    <div class="row centered">
+      {{ range .item }}
+      <div class="col-md-4">
+        <i class="fa {{ .icon }}"></i>
+        <h4>{{ .title }}</h4>
+        <p>{{ .description | markdownify }}</p>
+        {{ if isset . "linktitle" }}          
+          <p><br/><a href="{{ .linkurl }}" class="btn btn-theme">{{ .linktitle }}</a></p>
+        {{ end }}        
+      </div>
+      {{ end }}      	
+    </div>
+  </div>
+</div>
+{{else }}
+<div id="service">
+    <div class="container">
+      <div class="row centered">
+        <div class="col-md-4">
+          <i class="fa fa-heart-o"></i>
+          <h4>Handsomely Crafted</h4>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+          <p><br/><a href="#" class="btn btn-theme">More Info</a></p>
+        </div>
+        <div class="col-md-4">
+          <i class="fa fa-flask"></i>
+          <h4>Retina Ready</h4>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+          <p><br/><a href="#" class="btn btn-theme">More Info</a></p>
+        </div>
+        <div class="col-md-4">
+          <i class="fa fa-trophy"></i>
+          <h4>Quality Theme</h4>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+          <p><br/><a href="#" class="btn btn-theme">More Info</a></p>
+        </div>		 				
+      </div>
+    </div>
+  </div>
+{{end}}

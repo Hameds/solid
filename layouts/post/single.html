@@ -1,0 +1,37 @@
+
+
+{{ define "main" }}
+<div id="blue">
+    <div class="container">
+    <div class="row">
+      <h3>{{ .Title }}</h3>
+    </div>
+    </div> 
+</div>
+
+
+<div class="container mtb">
+    <div class="row">
+    
+      
+      <div class="col-lg-8">
+        <h3 class="ctitle">{{ .Title }}</h3>
+        <p><csmall>{{ .Date.Format "January 2, 2006" }}</csmall> </p>
+        {{ .Content }}
+        <div class="spacing"></div>
+        
+        
+     </div>
+      
+      
+      
+      <div class="col-lg-4">        
+          {{ partial "sidbar.html" . }}
+      </div>
+    </div>
+  </div>
+
+
+  
+
+{{ end }}

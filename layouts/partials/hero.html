@@ -1,0 +1,47 @@
+{{ with .Site.Params.hero }}
+<div id="headerwrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    {{ if isset . "lead" }}                       
+                        <h3>{{ .lead }}</h3>
+                    {{ end }}
+                    {{ if isset . "title" }}                       
+                        <h1>{{ .title }}</h1>
+                    {{ end }}
+                    {{ if isset . "description" }}                       
+                        <h5>{{ .description }}</h5>
+                    {{ end }}                   		
+                </div>
+                <div class="col-lg-8 col-lg-offset-2 himg">
+                    <img src={{ .img }}{{ . | absURL }} class="img-responsive">
+                </div>
+            </div>
+        </div> 
+    </div>
+
+    {{else}}
+    <div id="headerwrap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                                           
+                            <h3>Show your work with this beautiful theme
+                                </h3>
+                       
+                                          
+                            <h1>Eyecatching Bootstrap Theme.
+                                    
+                                    </h1>
+                       
+                                     
+                            <h5>and you can configure it! what are you waiting for?</h5>
+                                     		
+                    </div>
+                    <div class="col-lg-8 col-lg-offset-2 himg">
+                            <img src="{{ "img/browser.png" | absURL }}" class="img-responsive">
+                    </div>
+                </div>
+            </div> 
+        </div>
+{{ end }}
