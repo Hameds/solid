@@ -1,0 +1,14 @@
+{{ with .Site.Params.testimonial }}
+<div id="twrap">
+    <div class="container centered">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+            <i class="fa fa-comment-o"></i>
+            {{ .comment | safeHTML }}
+            <h4><br/>{{ .clientname }}</h4>
+            <p>{{ .clientorg }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}

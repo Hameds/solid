@@ -25,9 +25,14 @@ theme = "solid"
 
 [params.hero]
   img="img/browser.png"
-  lead="test"
-  title="test2"
-  description="test3"
+  lead="Show your work with this beautiful theme"
+  title="Eyecatching Bootstrap Theme."
+  description="and you can configure it! what are you waiting for?"
+
+[params.testimonial]
+  comment="<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>"
+  cliclientnameent="Marcel Newman"
+  clientorg="WEB DESIGNER - BLACKTIE.CO"
 
 [params.services]
   
@@ -90,7 +95,7 @@ If you find a bug or have an idea for a feature, feel free to use the [issue tra
 
 - add rtl support
 - make home page sections optional
-- port all solid theme pages
+- port all solid theme pages (in progress)
 - support more hugo features
 - better documentation
 - submit it to hugo themes showcase
